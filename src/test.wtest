@@ -65,3 +65,15 @@ test "Lucía está reemplazando a Mariela, y Melina está trabajando para Ludmil
 	melina.trabajaPara(ludmila)	
 	assert.equals(50,lucia.precioViaje(melina, 1))
 }
+
+test "Lucía esta reemplazando a Gabriela y Melina está trabajando para Ludmila por un viaje de 10 kilometros"{
+	lucia.estaReemplazando(gabriela)
+	melina.trabajaPara(ludmila)	
+	assert.equals(180,lucia.precioViaje(melina, 10))
+}
+
+test "Lucía esta reemplazando a Gabriela y Melina está trabajando para Ludmila por un viaje de 1 kilometros"{
+	lucia.estaReemplazando(gabriela)
+	melina.trabajaPara(ludmila)	
+	assert.equals(18,lucia.precioViaje(melina, 1))
+}
