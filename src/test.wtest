@@ -1,4 +1,6 @@
-
+/*
+ * Test: Bien. Solo faltó testear el método intercambiarRemiseras(), te dejo un ejemplo.
+ */
 import clientes.*
 import remiseras.*
 import cooperativa.*
@@ -92,4 +94,10 @@ test "La remisera de primer opción es Roxana, y el de segunda opción es Juana 
 test "La remisera de primer opción es Roxana, y el de segunda opción es Juana para un viaje de 4 kilometros para Teresa"{
 	oficina.asignarRemiseras(roxana,juana)
 	assert.equals(roxana,oficina.remiseraElegidaParaViaje(teresa, 4))
+}
+
+test "viaje de teresa 4 kilometros, pero al intercambiar remiseras queda elegida juana" {
+	oficina.asignarRemiseras(roxana,juana)
+	oficina.intercambiarRemiseras()
+	assert.equals(juana,oficina.remiseraElegidaParaViaje(teresa,4))
 }

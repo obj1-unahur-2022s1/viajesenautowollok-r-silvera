@@ -1,43 +1,38 @@
+/*
+ * Clientes: Bien. Te dejo sugerencias para simplificar el código nomás.
+ */
 import clientes.*
 
 object roxana{
-	method precioViaje(cliente,kms){
-		return cliente.precioPorKilometro() * kms 
-	}
+	/* Bien. Te dejo la forma simplificada sin return */
+	method precioViaje(cliente,kms) = cliente.precioPorKilometro() * kms 
 }
 
 object gabriela{
-	method precioViaje(cliente,kms){
-		return (cliente.precioPorKilometro() * kms)	* 1.2
-	}	
+	/* Bien. Te dejo la forma simplificada sin return */
+	method precioViaje(cliente,kms) = cliente.precioPorKilometro() * kms * 1.2
 }
 
 object mariela{
-	method precioViaje(cliente,kms){
-		return (cliente.precioPorKilometro() * kms).max(50)
-	}
+	/* Bien! Te dejo la forma simplificada sin return */
+	method precioViaje(cliente,kms) = (cliente.precioPorKilometro() * kms).max(50)
 }
 
 object juana{
-	method precioViaje(cliente,kms){
-		return if(kms <= 8){100} else{200}
-	}
+	/* Bien. Te dejo la forma simplificada sin return */
+	method precioViaje(cliente,kms) = if(kms <= 8) 100 else 200
 }
 
 object lucia{
+	/* Bien. Te dejo la forma simplificada sin return */
 	var companiera
 	
 	method estaReemplazando(remisera){
 		companiera = remisera
 	}
 	
-	method reemplazaA(){
-		return companiera
-	}
+	method reemplazaA() = companiera
 	
-	method precioViaje(cliente,kms){
-		return companiera.precioViaje(cliente,kms)
-	}
+	method precioViaje(cliente,kms) = companiera.precioViaje(cliente,kms)
+	// también: method precioViaje(cliente,kms) = self.reemplazaA().precioViaje(cliente,kms)
 }
-
-
